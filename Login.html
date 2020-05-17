@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="short icon" href="Resource/icon.png">
+    <link rel="stylesheet" href="ExternalStyle.css">
+    <script type="text/javascript" src="commonClass.js"></script>
+    <title>孙少妍</title>
+</head>
+<style>
+
+    .bg_img{
+        width: 100%;
+    }
+    .exter_div{
+        position: relative;
+    }
+    .inner_div{
+        left: 50%;
+        top:50%;
+        width: 66px;
+        height: 76px;
+        margin-left: -33px;
+        margin-top: 60px;
+        position: absolute;
+        text-align: center;
+    }
+
+
+
+
+   div input{
+        border: none;
+        background: transparent;
+
+       height: 100%;
+    }
+    form{
+        text-align: center;
+    }
+
+
+    .L_form_div{
+        width: 100%;
+        margin-top: 180px;
+    }
+    .L_form_inner_div{
+        width: 90%;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        background: white;
+        height: 100px;
+        margin:0 auto;
+    }
+    .L_form_inner_div div{
+        height: 50px;
+        border-bottom: 1px solid #cccccc;
+    }
+    .L_form_inner_div div span{
+        padding-left: 15px;
+        font-size: 20px;
+        line-height: 50px;
+    }
+    input{
+        outline: medium;
+    }
+    .external_login_div{
+        width: 100%;
+    }
+    .L_login_div{
+        width: 90%;
+        height: 50px;
+        background: rgb(36,92,162);
+        border-radius: 10px;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .L_login_div input{
+        color:white;
+        font-size: 20px;
+        line-height: 50px;
+        height: 50px;
+    }
+
+
+
+
+
+</style>
+<body>
+<header>
+    <span>登录</span>
+</header>
+
+    <div class="exter_div">
+        <div class="inner_div">
+            <img src="Resource/head.png" alt="" class="bg_img">
+        </div>
+    </div>
+
+
+
+<form action="" >
+    <div class="L_form_div">
+        <div class="L_form_inner_div">
+            <div >
+                <span>用户名:</span><input type="text" id="L_user">
+            </div>
+            <div >
+                <span>密　码:</span><input type="password" id="L_pwd">
+            </div>
+        </div>
+    </div>
+
+    <div class="external_login_div">
+        <div class="L_login_div">
+            <input type="button" value="登录" id="btn">
+        </div>
+    </div>
+
+
+
+</form>
+</body>
+<script>
+    var btn=document.querySelector("#btn");
+    btn.onclick= function() {
+        var userName = encodeURIComponent(document.querySelector("#L_user").value);
+        var password = encodeURIComponent(document.querySelector("#L_pwd").value);
+        var par3 = "username=" + userName + "&pwd=" + password;
+
+        requestMethod('post', 'login', par3, function (returnStr) {
+            if (returnStr == "登录成功") {
+                window.localStorage.setItem("userName", userName);
+                location.href = "DropletServer.html";
+            } else {
+                alert(returnStr);
+            }
+        });
+
+    }
+
+
+</script>
+
+</html>

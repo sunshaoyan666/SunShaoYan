@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="short icon" href="Resource/icon.png">
+    <link rel="stylesheet" href="ExternalStyle.css">
+    <script type="text/javascript" src="commonClass.js"></script>
+    <title>孙少妍</title>
+</head>
+<style>
+    article{
+        margin: 20px;
+    }
+    h3{
+        color: red;
+        font-size: 18px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #dddddd;
+    }
+    h4{
+        font-size: 14px;
+    }
+    article p{
+        font-size: 12px;
+        text-indent: 2em;
+        line-height:2em;
+    }
+</style>
+<body>
+    <header>
+        <span>平台风采</span>
+
+
+    </header>
+    <section class="DS_second_section">
+        <img src="Resource/banner4.png" alt="">
+    </section>
+    <article>
+        <h3 id="title"></h3>
+        <h4 id="subTitle"></h4>
+        <p id="info"></p>
+
+        <!--<h3>公司简介</h3>-->
+        <!--<h4>华杉科技（北京）有限公司</h4>-->
+        <!--<p>华杉科技有限公司一直秉承“在高薪和经验的路上，我们只做行业第一”，-->
+            <!--致力于未整改互联网科技行业输送高级技术人才，做好每一款外包项目。</p>-->
+        <!--<p>华杉科技有限公司一直秉承“在高薪和经验的路上，我们只做行业第一”，-->
+            <!--致力于未整改互联网科技行业输送高级技术人才，做好每一款外包项目。</p>-->
+        <!--<p>华杉科技有限公司一直秉承“在高薪和经验的路上，我们只做行业第一”，-->
+            <!--致力于未整改互联网科技行业输送高级技术人才，做好每一款外包项目。</p>-->
+    </article>
+    <script>
+
+        requestMethod('get','aboutus',"",function (returnStr) {
+            var title_concent=document.getElementById("title");
+            var subTitle_concent=document.getElementById("subTitle");
+            var info_concent=document.getElementById("info");
+
+
+            title_concent.innerHTML=returnStr.title;
+            subTitle_concent.innerHTML=returnStr.subTitle;
+            info_concent.innerHTML=returnStr.info;
+        });
+    </script>
+    <footer>
+        <a href="DropletServer.html"><img src="Resource/nav10.png" alt=""><span >小滴服务</span></a>
+        <a href="EnterpriseProject.html"><img src="Resource/nav20.png" alt=""><span>企业项目</span></a>
+        <a href="ServiceProcess.html"><img src="Resource/nav30.png" alt=""><span>服务流程</span></a>
+        <a href="PlatformMien.html"><img src="Resource/nav41.png" alt=""><span style="color: red">平台风采</span></a>
+        <a href="MyDroplet.html"><img src="Resource/nav50.png" alt=""><span >我的小滴</span></a>
+    </footer>
+</body>
+</html>
